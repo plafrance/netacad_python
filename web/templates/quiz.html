@@ -1,0 +1,23 @@
+<html>
+  <body>
+    {% if score == score_max-1 %}
+    Une dernière pour la route : {{ ops[0] }} + {{ ops[1] }}
+    {% else %}
+    Veuillez répondre aux {{ score_max - score }} questions subsidiaires suivantes pour réclamer votre prix : {{ ops[0] }} + {{ ops[1] }}
+    {% endif %}
+    <br>
+    Votre score est de {{ score }}
+    <form method="POST" action="/quiz">
+      <input name="reponse" type="text">
+      <input type="submit">
+    </form>
+
+    <br>
+    Les «pythonneux» sont avantagés : <a href="solutions/ébauche_requests.py">Ébauche de solution utilisant le module Requests</a><br>
+    <br>
+    <a href="solutions/ébauche_urllib.py">Ébauche n'utilisant que la librairie standard pour ceux qui ne peuvent pas installer le module :(</a>
+    <br>
+    <br>
+    et voici un petit programme qui peut vous servir d'exemple pour les opérations de base : <a href="solutions/exemple.py">exemple.py</a>
+  </body>
+</html>
